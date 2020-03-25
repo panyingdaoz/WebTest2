@@ -7,14 +7,18 @@
     android:layout_gravity="center"
     tools:context=".MainActivity">
 
-    <WebView
-        android:id="@+id/web"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        <com.zhang.webtest.CustomWebView
+            android:id="@+id/web"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="MissingConstraints" />
 
-    <!--    <com.tencent.smtt.sdk.WebView-->
+<!--    <com.itheima.view.BridgeWebView-->
+<!--        android:id="@+id/web"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent" />-->
+
+    <!--    <com.tencent.smtt.sdk.WebView-->  BridgeWebView
     <!--        android:id="@+id/forum_context"-->
     <!--        android:layout_width="match_parent"-->
     <!--        android:layout_height="match_parent"-->
