@@ -75,5 +75,5 @@ dependencies {
     implementation 'com.tencent.tinker:tinker-android-lib:1.9.9'
 
     //
-    implementation 'com.github.open-android:BridgeWebView:v1.0'
+//    implementation 'com.github.open-android:BridgeWebView:v1.0'
 }

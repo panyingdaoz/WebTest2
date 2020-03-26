@@ -46,12 +46,12 @@ public class MainActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).hide();
         setContentView(R.layout.activity_main);
 
-        init5();
-
         String[] perms = {Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO};
 
         if (!EasyPermissions.hasPermissions(this, perms)) {
             EasyPermissions.requestPermissions(this, "Need permissions for camera & microphone", 0, perms);
+        }else {
+            init5();
         }
     }
 
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         switch (requestCode) {
             case 1:
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-//                    startCamera();
+                    init5();
                     KLog.e("开始观看");
                 } else {
                     Toast.makeText(this, "没有相机权限！\n请接收权限申请或前往设置添加权限！", Toast.LENGTH_SHORT).show();
@@ -147,11 +147,13 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
 
+            @Override
             public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
                 KLog.e("加载失败原因：" + error.toString());
                 handler.proceed();
             }
 
+            @Override
             public void onPageFinished(WebView view, String url) {
                 KLog.e("加载完成：" + url);
                 super.onPageFinished(view, url);
